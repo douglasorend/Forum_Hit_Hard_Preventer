@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]FORUM HIT HARD PREVENTER v1.1[/b][/size][/color]
+[center][color=red][size=16pt][b]FORUM HIT HARD PREVENTER v1.2[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4091]Link to Mod[/url]
 [/center]
 [hr]
@@ -11,6 +11,12 @@ This mod records all non-action visits (aka board index, individual boards and t
 
 This mod attempts to detect whether CloudFlare servers are being used, and writes the [b].htaccess[/b] accordingly.
 
+[color=blue][b][size=12pt][u]Additional Requirements[/u][/size][/b][/color]
+Because we really don't want to ban our "wonderful" spiders, this mod turns on [b]Search Engine Tracking Level[/b] to [b]Standard[/b] setting in order to properly detect spiders.  For [b]SMF 2.0.x[/b], the [b]Search Engine[/b] core feature is enabled in order to properly detect spiders.
+
+[color=blue][b][size=12pt][u]Recommended Mods To Install[/u][/size][/b][/color]
+o [url=http://custom.simplemachines.org/mods/index.php?mod=1157]More Spiders[/url] - Adds 83 more spiders/crawlers to your Spiders section in SMF!
+
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
 There is a new setting under [b]Admin[/b] => [b]Configuration[/b] => [b]Security and Moderation[/b] called:
 o Maximum number of visits allowed before automatic ban
@@ -19,7 +25,7 @@ o Maximum number of visits allowed before automatic ban
 o [url=http://www.simplemachines.org/community/index.php?topic=524146.msg3710891#msg3710891][TIP/TRICK] How to ban users properly from .htaccess[/url]
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
-This mod was tested on SMF 2.0.11, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
+This mod was tested on SMF 2.0.11 and SMF 2.1 Beta 2, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
 The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=666.msg984#msg984]XPtsp.com[/url].

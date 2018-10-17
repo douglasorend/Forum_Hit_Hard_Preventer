@@ -3,7 +3,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:HitHard</id>
 <name>Forum Hit Hard Preventer</name>
-<version>1.1</version>
+<version>1.2</version>
 
 <file name="$boarddir/index.php">
 	<operation>
@@ -33,6 +33,13 @@ require_once($sourcedir . '/Subs-HardHit.php');]]></add>
 	]]></add>
 	</operation>
 </file>
+<file name="$sourcedir/Display.php">
+	<operation>
+		<search position="after"><![CDATA[header('HTTP/1.1 403 Prefetch Forbidden');]]></search>
+		<add><![CDATA[unset($_SESSION['HHP_Visits'][$context['HHP_time']]);
+		]]></add>
+	</operation>
+</file>
 <file name="$sourcedir/ManageSettings.php">
 	<operation>
 		<search position="before"><![CDATA[array('check', 'enableReportPM'),]]></search>
@@ -50,5 +57,32 @@ require_once($sourcedir . '/Subs-HardHit.php');]]></add>
 		]]></add>
 	</operation>
 </file>
+<file name="$sourcedir/MessageIndex.php">
+	<operation>
+		<search position="after"><![CDATA[header('HTTP/1.1 403 Prefetch Forbidden');]]></search>
+		<add><![CDATA[unset($_SESSION['HHP_Visits'][$context['HHP_time']]);
+		]]></add>
+	</operation>
+</file>
+<file name="$sourcedir/Recent.php">
+	<operation>
+		<search position="after"><![CDATA[header('HTTP/1.1 403 Forbidden');]]></search>
+		<add><![CDATA[unset($_SESSION['HHP_Visits'][$context['HHP_time']]);
+		]]></add>
+	</operation>
+</file>
+<file name="$sourcedir/Search.php">
+	<operation>
+		<search position="after"><![CDATA[header('HTTP/1.1 403 Forbidden');]]></search>
+		<add><![CDATA[unset($_SESSION['HHP_Visits'][$context['HHP_time']]);
+		]]></add>
+	</operation>
+</file>
+<file name="$sourcedir/Security.php">
+	<operation>
+		<search position="after"><![CDATA[header('HTTP/1.1 403 Forbidden');]]></search>
+		<add><![CDATA[unset($_SESSION['HHP_Visits'][$context['HHP_time']]);
+		]]></add>
+	</operation>
 </file>
 </modification>

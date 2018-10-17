@@ -17,10 +17,10 @@ if (!defined('SMF'))
 **********************************************************************************/
 function HHP_checkVisits()
 {
-	global $modSettings, $boarddir, $user_info;
+	global $modSettings, $boarddir, $user_info, $context;
 
 	// Exclude admin, moderators and when action parameter is specified in URL:
-	if ($user_info['is_admin'] || $user_info['is_mod'] || isset($_GET['action']))
+	if ($user_info['is_admin'] || $user_info['is_mod'] || isset($_GET['action']) || $user_info['possibly_robot'])
 		return;
 
 	// Make sure to get rid of all visits that have occurred more than a minute ago:
@@ -35,7 +35,7 @@ function HHP_checkVisits()
 	}
 
 	// Log the current visit's URL into the "HHP_Visits" session array:
-	$_SESSION['HHP_Visits'][time()] = $_SERVER['REQUEST_URI'];
+	$_SESSION['HHP_Visits'][$context['HHP_time'] = time()] = $_SERVER['REQUEST_URI'];
 
 	// Decide on the maximum number of visits before ban.  Minimum of 30 visits permitted.
 	$max_visits = (!empty($modSettings['HHP_max_visits']) ? max($modSettings['HHP_max_visits'], 30) : 30);

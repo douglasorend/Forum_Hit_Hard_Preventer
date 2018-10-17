@@ -1,3 +1,9 @@
+v1.2 - March 5th, 2016
+o Added code to remove URL log from prefetch requests, since they are aborted anyways...
+o Added code to allow [b]Subs-HardHit.php[/b] to allow spiders to not log URLs...
+o Modified installer to turn on [b]Search Engines[/b] core feature during install.
+o Modified installer to set [b]Search Engine Tracking Level[b] to [/b]Standard[/b] (or better).
+
 v1.1 - March 4th, 2016
 o Added support for SMF 2.1 Beta 2.  No changes for SMF 2.0.x branch.
 
