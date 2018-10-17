@@ -33,7 +33,7 @@ require_once($sourcedir . '/Subs-HardHit.php');]]></add>
 	]]></add>
 	</operation>
 </file>
-<file name="$sourcedir/ManageSettings.php">
+<file name="$sourcedir/ManageServer.php">
 	<operation>
 		<search position="before"><![CDATA[array('check', 'enableReportPM'),]]></search>
 		<add><![CDATA[
@@ -43,9 +43,9 @@ require_once($sourcedir . '/Subs-HardHit.php');]]></add>
 	</operation>
 	<operation>
 		<search position="after"><![CDATA[saveDBSettings($config_vars);
+		$_SESSION['adm-save'] = true;
 
-		writeLog();
-		redirectexit('action=admin;area=securitysettings;sa=general');]]></search>
+		call_integration_hook('integrate_save_general_security_settings');]]></search>
 		<add><![CDATA[$_POST['HHP_max_visits'] = max($_POST['HHP_max_visits'], 30);
 		]]></add>
 	</operation>
