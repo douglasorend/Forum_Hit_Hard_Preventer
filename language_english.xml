@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:HitHard</id>
+<name>Forum Hit Hard Preventer</name>
+<version>1.0</version>
+
+<file name="$languagedir/ManageSettings.english.php">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['HHP_max_visits'] = 'Maximum number of visits allowed before automatic ban:<div class="smalltext"><strong>NOTE:</strong> Minimum value permitted is 30</div>';
+$txt['HHP_per_minute'] = 'visits per minute';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/Errors.english.php">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['automatic_ban'] = 'An automatic ban for IP address "%s" has been generated, due to having made %d attempts to access the site within a minute.';
+]]></add>
+	</operation>
+</file>
+</modification>

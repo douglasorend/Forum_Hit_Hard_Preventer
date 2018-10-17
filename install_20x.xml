@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:HitHard</id>
+<name>Forum Hit Hard Preventer</name>
+<version>1.0</version>
+
+<file name="$boarddir/index.php">
+	<operation>
+		<search position="before"><![CDATA[require_once($sourcedir . '/Security.php');]]></search>
+		<add><![CDATA[
+require_once($sourcedir . '/Subs-HardHit.php');]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[// Check if the user should be disallowed access.]]></search>
+		<add><![CDATA[// Check to make sure our "visitor" isn't hitting our forum hard:
+	HHP_checkVisits();
+	
+	]]></add>
+	</operation>
+</file>
+<file name="$boarddir/SSI.php">
+	<operation>
+		<search position="before"><![CDATA[require_once($sourcedir . '/Security.php');]]></search>
+		<add><![CDATA[
+require_once($sourcedir . '/Subs-HardHit.php');]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[// Take care of any banning that needs to be done.]]></search>
+		<add><![CDATA[// Check to make sure our "visitor" isn't hitting our forum hard:
+	HHP_checkVisits();
+	
+	]]></add>
+	</operation>
+</file>
+<file name="$sourcedir/ManageSettings.php">
+	<operation>
+		<search position="before"><![CDATA[array('check', 'enableReportPM'),]]></search>
+		<add><![CDATA[
+		'',
+			// Forum Hard Hit setting:
+			array('int', 'HHP_max_visits', 'postinput' => $txt['HHP_per_minute']),]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[saveDBSettings($config_vars);
+
+		writeLog();
+		redirectexit('action=admin;area=securitysettings;sa=general');]]></search>
+		<add><![CDATA[$_POST['HHP_max_visits'] = max($_POST['HHP_max_visits'], 30);
+		]]></add>
+	</operation>
+</file>
+</file>
+</modification>
