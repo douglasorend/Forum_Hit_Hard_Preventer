@@ -5,19 +5,21 @@
 	<id>Dougiefresh:HitHard</id>
 	<name>Forum Hit Hard Preventer</name>
 	<type>modification</type>
-	<version>1.4</version>
+	<version>1.5</version>
 
 	<install for="2.0 - 2.0.99">
 		<readme parsebbc="true">readme.txt</readme>
 		<code>settings_install.php</code>
 		<modification>install_20x.xml</modification>
 		<modification>language_english.xml</modification>
+		<modification>language-BR-portuguese.xml</modification>
 		<require-file name="Subs-HardHit.php" destination="$sourcedir" />
 		<redirect timeout="5000" url="?action=admin;area=securitysettings;sa=general" />
 	</install>
 	<uninstall for="2.0 - 2.0.99">
 		<modification reverse="true">install_20x.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
+		<modification reverse="true">language-BR-portuguese.xml</modification>
 		<remove-file name="$sourcedir/Subs-HardHit.php" />		
 	</uninstall>
 
@@ -26,12 +28,14 @@
 		<code>settings_install.php</code>
 		<modification>install_21x.xml</modification>
 		<modification>language_english.xml</modification>
+		<modification>language-BR-portuguese.xml</modification>
 		<require-file name="Subs-HardHit.php" destination="$sourcedir" />
 		<redirect timeout="5000" url="?action=admin;area=securitysettings;sa=general" />
 	</install>
 	<uninstall for="2.1 Beta 2">
 		<modification reverse="true">install_21x.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
+		<modification reverse="true">language-BR-portuguese.xml</modification>
 		<remove-file name="$sourcedir/Subs-HardHit.php" />		
 	</uninstall>
 </package-info>

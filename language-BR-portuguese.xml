@@ -1,0 +1,27 @@
+*// PT-BR TRANSLATION By:  pt-br translation by ORIONzitos (https://discord.gg/Z2m5bsA, a discord for BR-COMMUNITY) //*
+
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:HitHard</id>
+<name>Forum Hit Hard Preventer</name>
+<version>1.5</version>
+
+<file name="$languagedir/ManageSettings.portuguese_brazilian-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['HHP_max_visits'] = 'Máximo de visitas permitidas antes o banimento automatico:<div class="smalltext"><strong>NOTE:</strong> Valor minimo permitido: 30</div>';
+$txt['HHP_per_minute'] = 'visitas por minuto';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/Errors.portuguese_brazilian-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['automatic_ban'] = 'Um banimento automatico para o endereço de IP "%s" foi gerado, devido ao numero de %d tentativas de acessar o site em 1 minuto.';
+]]></add>
+	</operation>
+</file>
+</modification>
