@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:HitHard</id>
+<name>Forum Hit Hard Preventer</name>
+<version>1.4</version>
+
+<file name="$languagedir/ManageSettings.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['HHP_max_visits'] = 'N&uacute;mero m&aacute;ximo de visitas permitidas antes de la prohibici&oacute;n autom&aacute;tica:<div class="smalltext"><strong>NOTA:</strong> El valor m&iacute;nimo permitido es 30</div>';
+$txt['HHP_per_minute'] = 'visitas por minuto';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/ManageSettings.spanish_latin-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['HHP_max_visits'] = 'Número máximo de visitas permitidas antes de la prohibición automática:<div class="smalltext"><strong>NOTA:</strong> El valor mínimo permitido es 30</div>';
+$txt['HHP_per_minute'] = 'visitas por minuto';
+]]></add>
+	</operation>
+</file>
+
+<file name="$languagedir/Errors.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['automatic_ban'] = 'Una prohibici&oacute;n automática de la direcci&oacute;n IP "%s" se ha generado, por haber hecho %d intentos de accesos al sitio en un minuto.';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/Errors.spanish_latin-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['automatic_ban'] = 'Una prohibición autom&aacute;tica de la dirección IP "%s" se ha generado, por haber hecho %d intentos de accesos al sitio en un minuto.';
+]]></add>
+	</operation>
+</file>
+</modification>
