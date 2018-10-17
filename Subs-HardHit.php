@@ -50,11 +50,10 @@ function HHP_checkVisits()
 	if (!$htaccess || strpos($htaccess, $order) === false)
 		$htaccess .= "\n" . $order . "\ndeny from env=deniedip";
 	$time = date('Y-m-d', time());
-	$ip = $_SERVER['REMOTE_ADDR'];
 	if (HHP_cloudflare_check())
-		$rep = 'SetEnvIf X-FORWARDED-FOR ' . $ip . ' # ' . $time . "\n" . $order;
+		$rep = 'SetEnvIf X-FORWARDED-FOR ' . $_SERVER['REMOTE_ADDR'] . ' # ' . $time . "\n" . $order;
 	else
-		$rep = $order . "\ndeny from " . $ip . ' # ' . $time;
+		$rep = $order . "\ndeny from " . $_SERVER['REMOTE_ADDR'] . ' # ' . $time;
 
 	// Write the modified .htaccess file:
 	$file = @fopen($boarddir . '/.htaccess', 'w');
